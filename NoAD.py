@@ -40,7 +40,9 @@ def download_video():
     raw_data = urllib.request.urlopen(yt.thumbnail_url).read()
     im = Image.open(io.BytesIO(raw_data)).resize((200, 200))
     image = ImageTk.PhotoImage(im)
-    canvas.create_image(450,450, image=image)
+    label = Label(image = image)
+    label.image = image
+    canvas.create_window(450,450,window=label)
 
     #Get author
     author = Label(text=yt.author)
@@ -77,7 +79,9 @@ def download_audio():
     raw_data = urllib.request.urlopen(yt.thumbnail_url).read()
     im = Image.open(io.BytesIO(raw_data)).resize((200, 200))
     image = ImageTk.PhotoImage(im)
-    canvas.create_image(450,450, image=image)
+    label = Label(image = image)
+    label.image = image
+    canvas.create_window(450,450,window=label)
 
     #Get author
     author = Label(text=yt.author)
